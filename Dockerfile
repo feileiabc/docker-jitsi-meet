@@ -7,6 +7,9 @@ RUN  sed -i s@/archive.ubuntu.com/@/mirrors.aliyun.com/@g /etc/apt/sources.list
 RUN  apt-get clean
 RUN apt-get update
 RUN apt-get -y install gnupg2
+RUN apt-get -y install curl
+RUN apt-get -y install sudo
+RUN apt-get -y install wget
 
 RUN apt-get install -y wget dnsutils vim telnet && \
 	curl https://download.jitsi.org/jitsi-key.gpg.key | sudo sh -c 'gpg --dearmor > /usr/share/keyrings/jitsi-keyring.gpg' && \
